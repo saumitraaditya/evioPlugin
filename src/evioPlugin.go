@@ -400,12 +400,9 @@ func cmdDel(args *skel.CmdArgs) error {
 	return nil
 }
 
-func cmdCheck(args *skel.CmdArgs) error {
-	return nil
-}
 
 func main() {
-	skel.PluginMain(cmdAdd, cmdCheck, cmdDel, version.All, "evio cni plugin")
+	skel.PluginMain(cmdAdd,  cmdDel, version.All)
 }
 
 func enableIPForward(family int) error {
