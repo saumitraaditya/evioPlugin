@@ -84,9 +84,9 @@ data:
      "isDefaultGateway": true,
      "isIPMasq": true,
      "nodeBits": "8",
-     "podCIDR": "10.244.0.16/20",
-     "dataStore": "192.168.81.133:42000",
-     "auth": true
+     "podCIDR": "10.244.0.16/16",
+     "dataStore": "0.0.0.0:42000",
+     "auth": false
     }
 ---
 apiVersion: apps/v1
@@ -127,7 +127,7 @@ spec:
       serviceAccountName: evio
       initContainers:
       - name: install-cni
-        image: evio-cni:0.0
+        image: evio_plugin:0.0
         volumeMounts:
         - name: cni
           mountPath: /etc/cni/net.d

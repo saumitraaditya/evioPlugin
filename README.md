@@ -40,4 +40,6 @@ git clone https://github.com/saumitraaditya/evioPlugin.git
    
  Build the docker image.  
    
-  
+```
+docker build -t evio_plugin:0.0 -f evioCNI.dockerfile .
+```
